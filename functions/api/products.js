@@ -1,0 +1,2 @@
+import {db,json,error} from "../_lib/db.js";
+export async function onRequestGet({env}){try{const sql=db(env);const rows=await sql`SELECT p.id,p.sku,p.name,p.category,r.unit_price,r.minimum_qty FROM products p LEFT JOIN LATERAL (SELECT unit_price,minimum_qty FROM pricing_rules WHERE product_id=p.id AND active=true ORDER BY updated_at DESC LIMIT 1) r ON true WHERE p.active=true ORDER BY p.name`;return json({products:rows});}catch(e){return error("Unable to load products",500);}}
