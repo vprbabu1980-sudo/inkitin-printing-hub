@@ -1,6 +1,7 @@
 name = "inkitin-printing-hub-live"
 main = "worker.js"
 compatibility_date = "2026-09-04"
+compatibility_flags = ["nodejs_compat"]
 
 [assets]
 directory = "./public"
