@@ -4,9 +4,5 @@ pages_build_output_dir = "."
 [vars]
 APP_ENV = "test"
 WHATSAPP_MODE = "test"
-# Add DATABASE_URL and all provider secrets in Cloudflare's encrypted environment variables.
-# Do NOT put credentials in this file.
-[[r2_buckets]]
-binding = "ARTWORKS"
-bucket_name = "inkitin-artworks-private"
-preview_bucket_name = "inkitin-artworks-private-preview"
+# DATABASE_URL and provider secrets must be configured as encrypted Cloudflare variables.
+# R2 artwork storage will be enabled later after the storage/billing requirement is configured.
