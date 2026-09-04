@@ -1,0 +1,2 @@
+import {db,json,error} from "../../_lib/db.js";
+export async function onRequestGet({env}){try{const sql=db(env);const rows=await sql`SELECT o.order_number,o.status,o.subtotal,o.gst,o.total,o.created_at,c.full_name,c.email,c.phone FROM orders o JOIN customers c ON c.id=o.customer_id ORDER BY o.created_at DESC LIMIT 100`;return json({orders:rows});}catch(e){return error("Unable to load orders",500);}}
