@@ -1,0 +1,6 @@
+{
+  "name":"inkitin-printing-hub-v5.4",
+  "private":true,
+  "type":"module",
+  "dependencies":{"@neondatabase/serverless":"^1.0.2","jose":"^6.0.11"}
+}
