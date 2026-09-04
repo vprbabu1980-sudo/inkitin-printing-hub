@@ -16,7 +16,7 @@ export default {
     try {
       if (url.pathname === "/api/health") {
         const ok = Boolean(env.DATABASE_URL);
-        return Response.json({ok, databaseConfigured: ok, environment: env.APP_ENV || "test"});
+        return Response.json({ok, databaseConfigured: ok, environment: env.APP_ENV || "test", version: "5.4.1"});
       }
       if (url.pathname === "/api/products" && request.method === "GET") return withCors(await products({request,env,ctx}));
       if (url.pathname === "/api/quote" && request.method === "POST") return withCors(await quote({request,env,ctx}));
