@@ -1,8 +1,11 @@
-name = "inkitin-printing-hub"
+name = "inkitin-printing-hub-live"
+main = "worker.js"
 compatibility_date = "2026-09-04"
-pages_build_output_dir = "."
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
 [vars]
 APP_ENV = "test"
 WHATSAPP_MODE = "test"
-# DATABASE_URL and provider secrets must be configured as encrypted Cloudflare variables.
-# R2 artwork storage will be enabled later after the storage/billing requirement is configured.
